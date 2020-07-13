@@ -30,7 +30,7 @@ Clone/check out this project, then run `lando start` from the root
 directory of this project.
 
 Try some of these other commands:
-* `lando psql` Run Arbritrary PostgreSQL commands via the CLI for Postgres.
+* `lando psql` Run arbritrary PostgreSQL commands via the CLI for Postgres.
 * `lando db-import <file>`  Import a dump file into the database.
 * `lando python` run arbitrary python commands
 * `lando django-admin` run django-admin commands.
