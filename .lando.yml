@@ -7,7 +7,7 @@ services:
     # name for your app, you'll have to change all occurences of 'firstapp' to whatever your app is named.
     command: su -c 'python /app/firstapp/manage.py runserver 0.0.0.0:8000 -v 3' www-data
     build:
-      - cd /app && pip install --upgrade pip && pip install -r requirements.txt
+      - cd /app && pip install --upgrade pip && pip install --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org -r requirements.txt 
     scanner: true
     overrides:
       ports:
