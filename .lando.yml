@@ -3,8 +3,8 @@ name: django-play
 services:
   appserver:
     type: python
-    # NOTE: this entire Landofile hard codes a path to an app we assume exists. If you have a different
-    # name for your app, you'll have to change all occurences of 'firstapp' to whatever your app is named.
+    # NOTE: this entire Landofile hard codes a path to a project we assume exists. If you have a different
+    # name for your project, you'll have to change all occurences of 'firstapp' to whatever your project is named.
     command: su -c 'python /app/firstapp/manage.py runserver 0.0.0.0:8000 -v 3' www-data
     build:
       - cd /app && pip install --upgrade pip && pip install --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org -r requirements.txt 
@@ -13,7 +13,7 @@ services:
       ports:
         - '8000:8000'
       environment:
-        # NOTE: change this path to match your app name
+        # NOTE: change this path to match your project name
         PYTHONPATH: "/app/firstapp"
         DJANGO_SETTINGS_MODULE: "firstapp.settings"
     moreHttpPorts:
@@ -36,7 +36,7 @@ tooling:
     cmd: python
   manage:
     service: appserver
-    # NOTE: change this path to match your app name
+    # NOTE: change this path to match your project name
     cmd: cd /app/firstapp && python manage.py
   psql:
     service: db
